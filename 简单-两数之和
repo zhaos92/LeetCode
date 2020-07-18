@@ -7,3 +7,27 @@
 
 因为 nums[0] + nums[1] = 2 + 7 = 9
 所以返回 [0, 1]
+
+第一次完成的代码如下：
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> two_nums;
+        for (int i = 0; i < nums.size(); ++i)
+        {
+            for (int j = i + 1; j < nums.size(); ++j)
+            {
+                if (target == nums[i] + nums[j])
+                {
+                   two_nums.push_back(i); 
+                   two_nums.push_back(j);
+                   return two_nums;
+                }
+            }
+        }
+
+        return two_nums;
+    }
+};
+
+第一次完成之后，其实是并想不到其他可以实现的方式了，所以看了看官方的解析，也由此学习了哈希表（HashMap）的用法。
